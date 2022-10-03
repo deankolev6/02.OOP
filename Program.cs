@@ -1,21 +1,41 @@
 ﻿using System;
 
-namespace Ex01
+namespace Ex02.DogMeeting
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
-        {
-            Person firstPerson = new Person();
-                firstPerson.Name = "Gosho";
-            firstPerson.Age = 15;
-            firstPerson.IntroduceYourself();
-            firstPerson.Age = 17;
-            firstPerson.IntroduceYourself();
+        static void Main()
 
-            firstPerson.Name = "Ivan";
-            firstPerson.Age = 19;
-            firstPerson.IntroduceYourself();
+        {
+            string firstDogName = null;
+
+            Console.WriteLine("Write first dog name: ");
+
+            firstDogName = Console.ReadLine();
+
+
+            Dog firstDog = new Dog(firstDogName);
+
+            Dog secondDog = new Dog();
+
+            Console.WriteLine("Write second dog name: ");
+
+            string secondDogName = Console.ReadLine();
+
+            secondDog.Name = secondDogName;
+
+
+            Dog thirdDog = new Dog();
+
+            Dog[] dogs = new Dog[] { firstDog, secondDog, thirdDog };
+            foreach (Dog dog in dogs)
+            {
+
+                dog.Bark();
+            }
+
         }
     }
 }
+
+
